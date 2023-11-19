@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { loginDTO } from 'src/app/modelo/login-dto';
+import { LoginDTO } from 'src/app/modelo/login-dto';
 import { RegistroPacienteDTO } from 'src/app/modelo/registro-paciente-dto';
 
 
@@ -11,12 +11,12 @@ import { RegistroPacienteDTO } from 'src/app/modelo/registro-paciente-dto';
 
 
 export class LoginComponent {
-  loginDTO: loginDTO;
+  loginDTO: LoginDTO;
   email:string[];
   password:string[];
   
   constructor() {
-    this.loginDTO = new loginDTO();
+    this.loginDTO = new LoginDTO();
     this.email = [];    
     this.password = [];
   }
@@ -26,7 +26,7 @@ export class LoginComponent {
      
     }
     public sonIguales():boolean{
-      return this.loginDTO.password == this.loginDTO.confirmaPassword;
+      return this.loginDTO.password == this.loginDTO.confirmarPassword;
       }
 
 }

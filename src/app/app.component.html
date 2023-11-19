@@ -1,4 +1,5 @@
 <header class="p-3 text-bg-primary">
+  
   <div class="container">
   <div class="d-flex flex-wrap align-items-center justify-content-center
   justify-content-lg-start">
@@ -6,12 +7,12 @@
   text-decoration-none">
   
   <i class="fa-solid fa-stethoscope fs-3"></i>
-  <span class="fs-4 ms-3 me-3">{{title}}</span>
+  <span class="fs-4 ms-3 me-3">UQdemic EPS</span>
   </a>
   <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
   <li><a routerLink="" class="nav-link px-2 text-white">Inicio</a></li>
   <li><a routerLink="" class="nav-link px-2 text-white">Gestión médicos</a></li>
-  <li><a routerLink="" class="nav-link px-2 text-white">Gestión PQRS</a></li>
+  <li><a routerLink="/gestion-pqrs" class="nav-link px-2 text-white">Gestión PQRS</a></li>
   <li><a routerLink="" class="nav-link px-2 text-white">Gestión Citas</a></li>
   </ul>
   <div class="text-end">
@@ -36,18 +37,35 @@
 
 
 <div class="container">
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4
-border-top">
-<div class="col-md-4 d-flex align-items-center">
-<span class="mb-3 mb-md-0 text-muted">&copy; 2023 Universidad del Quindío</span>
-</div>
-<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-<li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-x-twitter
-fs-5"></i></a></li>
-<li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram
-fs-5"></i></a></li>
-<li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook
-fs-5"></i></a></li>
-</ul>
-</footer>
+  <footer class="footer mt-auto py-3 bg-custom-color">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <p>Powered by John Alejandro González Cárdenas</p>
+          <p>Email: jagonzalezc@uqvirtual.edu.co</p>
+          <p>Teléfono: 3226646612</p>          
+        </div>
+        <div class="col-md-4">
+          <h5>Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/registro">Registro</a></li>
+            <li><a routerLink="/gestion-pqrs">Gestion PQRS</a></li>
+            <li><a routerLink="/index">Home</a></li>            
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Síguenos</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://www.facebook.com/people/Alejandro-Gonzalez/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.instagram.com/ingenieroalejandrogonzalez20/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>            
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="text-muted">© 2023 Clínica UQdemic EPS, Universidad del Quindío. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
 </div>

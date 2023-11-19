@@ -5,6 +5,7 @@ import { RegistroComponent } from './registro.component';
 describe('RegistroComponent', () => {
   let component: RegistroComponent;
   let fixture: ComponentFixture<RegistroComponent>;
+  
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

@@ -1,5 +1,5 @@
-export class loginDTO {
-    email:string = "";
+export class LoginDTO {
+    email:string = "";    
     password:string = "";
-    confirmaPassword:string = "";
+    confirmarPassword:string = "";
 }
