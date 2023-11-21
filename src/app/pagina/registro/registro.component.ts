@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Alerta } from 'src/app/modelo/alerta';
 import { RegistroPacienteDTO } from 'src/app/modelo/registro-paciente-dto';
 import { AuthService } from 'src/app/servicios/auth.service';
@@ -20,7 +21,7 @@ export class RegistroComponent {
   archivos!:FileList;
   alerta!:Alerta;  
 
-  constructor(private imagenService: ImagenService, private authService: AuthService, private clinicaService: ClinicaService) {
+  constructor(private imagenService: ImagenService, private authService: AuthService, private clinicaService: ClinicaService,private router: Router) {
     this.registroPacienteDTO = new RegistroPacienteDTO();
     this.ciudad = [];
     this.cargarCiudad();
@@ -37,9 +38,12 @@ export class RegistroComponent {
   
   public registrar(){
     if (this.registroPacienteDTO.urlFoto.length != 0){
+      console.log(this.registroPacienteDTO);
+      
       this.authService.registrarPaciente(this.registroPacienteDTO).subscribe({
         next: data => {
         this.alerta = { mensaje: data.respuesta, tipo: "success" };
+          this.router.navigateByUrl('https://www.ejemplo.com');
         },
         error: error => {
         this.alerta = { mensaje: error.error.respuesta, tipo: "danger" };
@@ -117,12 +121,16 @@ export class RegistroComponent {
       }
 
       public subirImagen() {
+
         if (this.archivos != null && this.archivos.length > 0) {
         const formData = new FormData();
         formData.append('file', this.archivos[0]);
+
         this.imagenService.subir(formData).subscribe({
+          
         next: data => {
         this.registroPacienteDTO.urlFoto = data.respuesta.url;
+        this.alerta = { mensaje: data.respuesta, tipo: "success" };
         },
         error: error => {
         this.alerta = { mensaje: error.error, tipo: "danger" };

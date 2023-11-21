@@ -23,6 +23,7 @@
         name="telefono" class="form-control" required [(ngModel)]="registroPacienteDTO.telefono" />
         </div>
     </div>
+
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Foto: </label>
         <div class="col-sm-8">
@@ -35,6 +36,7 @@
         </button>
         </div>
     </div>
+    <app-alerta [alerta]="alerta"></app-alerta>
     
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Ciudad: </label>
@@ -90,9 +92,10 @@
         <div class="col-sm-10">
         <input #email="ngModel"
         [ngClass]="email.invalid && (email.dirty || email.touched) ? 'is-invalid' : ''" type="email"
-        name="email" class="form-control" required [(ngModel)]="registroPacienteDTO.email" />
+        name="email" class="form-control" required email [(ngModel)]="registroPacienteDTO.email" />
         </div>
     </div>
+
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Contraseña: </label>
         <div class="col-sm-10">
@@ -101,13 +104,18 @@
         name="password" class="form-control" required [(ngModel)]="registroPacienteDTO.password" />
         </div>
     </div>
+
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Repetir contraseña: </label>
         <div class="col-sm-10">
         <input #confirmaPassword="ngModel"
         [ngClass]="confirmaPassword.invalid && (confirmaPassword.dirty || confirmaPassword.touched) ? 'is-invalid' : ''" type="password"
-        name="confirmaPassword" class="form-control" required [(ngModel)]="registroPacienteDTO.confirmaPassword" />
+        name="confirmarPassword" class="form-control" required [(ngModel)]="registroPacienteDTO.confirmaPassword" />
         </div>
+    </div>
+
+    <app-alerta [alerta]="alerta"></app-alerta>   
+    <div class="alert alert-danger" role="alert" *ngIf="!sonIguales()">Las contraseñas no coinciden
     </div>
 
     <div class="card">
@@ -125,7 +133,4 @@
     <button class="btn btn-primary" type="submit" (click)="registrar()" [disabled]="f.invalid || !sonIguales()">
         <i class="fa-solid fa-circle-plus me-1"></i>Registrarse
     </button> 
-    <app-alerta [alerta]="alerta"></app-alerta>   
-    <div class="alert alert-danger" role="alert" *ngIf="!sonIguales()">Las contraseñas no coinciden
-    </div>
 </form>

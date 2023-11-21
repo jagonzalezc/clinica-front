@@ -1,0 +1,11 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AdministradorService {
+
+  constructor() { }
+
+  public cambiarEstadoPQRS(){}
+}

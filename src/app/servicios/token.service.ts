@@ -19,19 +19,47 @@ public setToken(token: string) {
       return true;
       }
       return false;
+    }
+    public login(token: string) {
+      this.setToken(token);
+      this.router.navigate(["/"]).then(() => {
+      window.location.reload();
+      });
       }
-      public login(token:string){
-        this.setToken(token);
-        this.router.navigate(["/"]);
-        }
-        public logout() {
-          window.sessionStorage.clear();
-          this.router.navigate(["/login"]);
-          }
-          private decodePayload(token: string): any {
+    public logout() {
+      window.sessionStorage.clear();
+      this.router.navigate(["/login"]).then(() => {
+      window.location.reload();
+      });
+    }
+    private decodePayload(token: string): any {
             const payload = token!.split(".")[1];
             const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
             const values = JSON.parse(payloadDecoded);
             return values;
-            }
+    }
+    public getCodigo(): number {
+              const token = this.getToken();
+              if (token) {
+              const values = this.decodePayload(token);
+              return values.id;
+              }
+              return 0;
+    }
+    public getEmail():string{
+      const token = this.getToken();
+      if(token){
+      const values = this.decodePayload(token);
+      return values.sub;
+      }
+      return "";
+    }
+    public getRole():string[]{
+      const token = this.getToken();
+      if(token){
+      const values = this.decodePayload(token);
+      return values.rol;
+      }
+      return [];
+    }
 }

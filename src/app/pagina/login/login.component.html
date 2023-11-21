@@ -1,5 +1,3 @@
-<form #f="ngForm" (ngSubmit)="login()" style="display: flex; flex-direction: column; align-items: center;">
-   
     <div>
     <label>Correo  electrónico: </label>
     <input type="email" name="email" [(ngModel)]="loginDTO.email" email="true" required />
@@ -9,12 +7,7 @@
     <label>Escribir Contraseña: </label>
     <input type="password" name="password" [(ngModel)]="loginDTO.password"  required/>
     </div>
-    <br>
-    <div>
-    <label >Repetir  contraseña: </label>
-    <input type="password" name="confirmaPassword" [(ngModel)]="loginDTO.confirmarPassword"  required/>
-    </div>
-    <br>
-    <button type="submit" [disabled]="f.invalid || !sonIguales()" >Login</button>
-    <p *ngIf="!sonIguales()" >Las contraseñas no coinciden</p>
-</form>
+    <button class="btn btn-primary" type="submit" (click)="login()">
+        <i class="fa-solid fa-circle-plus me-1"></i>Ingresar
+    </button>
+  

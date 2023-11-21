@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 providedIn: 'root'
 })
 export class ClinicaService {
-private clinicaURL = "http://localhost:8080/api/clinica";
+private clinicaURL = "http://localhost:8081/api/clinica";
 constructor(private http: HttpClient) { }
 
 public listarCiudades(): Observable<MensajeDTO> {

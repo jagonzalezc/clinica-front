@@ -8,7 +8,7 @@ import { DetallePacienteDTO } from '../modelo/detalle-paciente-dto';
   providedIn: 'root'
   })
   export class PacienteService {
-  private userUrl = "http://localhost:8080/api/pacientes";
+  private userUrl = "http://localhost:8081/api/pacientes";
   constructor(private http: HttpClient) { }
   public verDetallePaciente(codigo: number): Observable<MensajeDTO> {
   return this.http.get<MensajeDTO>(`${this.userUrl}/detalle/${codigo}`);
@@ -23,6 +23,6 @@ import { DetallePacienteDTO } from '../modelo/detalle-paciente-dto';
   return this.http.post<MensajeDTO>(`${this.userUrl}/crear-pqrs`, registroPQRSDTO);
   }
   public listarPQRSPaciente(codigoPaciente: number): Observable<MensajeDTO> {
-  return this.http.get<MensajeDTO>(`${this.userUrl}/listar-pqrs/${codigoPaciente}`);
+  return this.http.get<MensajeDTO>(`${this.userUrl}/listar-pqrs-paciente/${codigoPaciente}`);
   }
   }
