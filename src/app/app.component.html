@@ -11,8 +11,12 @@
     </a>
     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
     
+      
+      <ul *ngIf="roles.includes('medico')" class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><img src="assets/imagenes/medico.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="" class="nav-link px-2 text-white">Gestión médicos</a></li>
+        <li><img src="assets/imagenes/cita.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="/listar-citas" class="nav-link px-2 text-white">Gestión Citas</a></li>
+      </ul>
     
-    <li><img src="assets/imagenes/cita.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="/listar-citas" class="nav-link px-2 text-white">Gestión Citas</a></li>
     <li><img src="assets/imagenes/pqr.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="/gestion-pqrs" class="nav-link px-2 text-white">Gestión PQRS</a></li>
     
   </ul>
@@ -24,10 +28,7 @@
     <li><img src="assets/imagenes/paciente.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="" class="nav-link px-2 text-white">Gestión Pacientes</a></li>
     <li><img src="assets/imagenes/pqr.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="/gestion-pqrs" class="nav-link px-2 text-white">Gestión PQRS</a></li>
   </ul>
-  
-    <ul *ngIf="roles.includes('medico')" class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-      <li><img src="assets/imagenes/medico.png" alt="Customers" class="d-block mx-auto mb-1" width="24" height="24"><a routerLink="" class="nav-link px-2 text-white">Gestión médicos</a></li>
-    </ul>
+
 
   <div *ngIf="!isLogged; then nologged else logged"></div>
    <ng-template #nologged>
