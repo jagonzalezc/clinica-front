@@ -15,6 +15,7 @@ ngOnInit(): void {
 this.isLogged = this.tokenService.isLogged();
 if(this.isLogged){
 this.email = this.tokenService.getEmail();
+this.roles = this.tokenService.getRole();  
 }
 }
 public logout(){
