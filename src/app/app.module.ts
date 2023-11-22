@@ -8,11 +8,10 @@ import { InicioComponent } from './pagina/inicio/inicio.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import { LoginComponent } from './pagina/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { CrearPqrsComponent } from './pagina/crear-pqrs/crear-pqrs.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
-import { GestionCitasComponent } from './pagina/gestion-citas/gestion-citas.component';
+import { ListarCitasComponent } from './pagina/listar-citas/listar-citas.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +19,9 @@ import { GestionCitasComponent } from './pagina/gestion-citas/gestion-citas.comp
     InicioComponent,
     RegistroComponent,
     LoginComponent,
-    CrearPqrsComponent,
     DetallePqrsComponent,
     AlertaComponent,
-    GestionCitasComponent
+    ListarCitasComponent,
   ],
   imports: [
     BrowserModule,
