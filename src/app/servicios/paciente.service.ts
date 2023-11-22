@@ -8,8 +8,11 @@ import { DetallePacienteDTO } from '../modelo/detalle-paciente-dto';
   providedIn: 'root'
   })
   export class PacienteService {
+
   private userUrl = "http://localhost:8081/api/pacientes";
+  
   constructor(private http: HttpClient) { }
+
   public verDetallePaciente(codigo: number): Observable<MensajeDTO> {
   return this.http.get<MensajeDTO>(`${this.userUrl}/detalle/${codigo}`);
   }

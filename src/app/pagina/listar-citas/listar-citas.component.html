@@ -1,1 +1,30 @@
-<p>listar-citas works!</p>
+<h1>Listado de Citas Pendientes</h1>
+
+<div *ngIf="citasDTO.length > 0; else noCitas">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre del Paciente</th>
+        <th>Cédula</th>
+        <th>Fecha</th>
+        <th>Motivo</th>
+        <th>Atención</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citasDTO">
+        <td>{{ cita.nombrePaciente }}</td>
+        <td>{{ cita.cedulaPaciente }}</td>
+        <td>{{ cita.fechaAtencion | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td>{{ cita.motivo }}</td>
+        <td>
+          <button (click)="cita">Atender Cita</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noCitas>
+  <p>No hay citas pendientes.</p>
+</ng-template>

@@ -1,0 +1,51 @@
+/* Estilos para el formulario de citas */
+h1 {
+  text-align: center;
+  color: #333; /* Color del texto */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2; /* Color de fondo para las cabeceras de la tabla */
+  color: #333;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para el mensaje cuando no hay citas */
+p {
+  color: #666;
+  text-align: center;
+  font-style: italic;
+  margin-top: 20px;
+}
